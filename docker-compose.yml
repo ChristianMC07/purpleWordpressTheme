@@ -17,6 +17,10 @@ services:
   # Wordpress
   wordpress:
     image: wordpress:latest
+    privileged: true
+    build:
+      context: .
+      dockerfile: wp.Dockerfile
     volumes: [./:/var/www/html:rw]
     ports:
       - 80:80
